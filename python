@@ -1,0 +1,6 @@
+1 错误：python 命令行运行出错：module 'scipy.misc' has no attribute 'toimage'
+解决：在终端输入：conda install Pillow
+另：`toimage` is deprecated in SciPy 1.0.0, and will be removed in 1.2.0.
+Use Pillow's ``Image.fromarray`` directly instead.
+
+2 安装scipy: 可分别尝试：1) conda install scipy 2) pip install scipy 3) sudo apt-get install scipy
