@@ -1,0 +1,73 @@
+flatten是numpy.ndarray.flatten的一个函数，返回一个一维数组。
+只能作用于numpy对象，即array或mat，普通的list列表不适用。
+a是一个数组：a.flatten()將a降到一维，默认是按行的方向降
+a是一个矩阵：b=a.flatten(),b还是一个矩阵，b.A变成了数组
+
+实例：
+1）数组：
+
+>>> from numpy import *
+>>> a=array([[1,2],[3,4],[5,6]])
+>>> a
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+>>> a.shape
+(3, 2)
+>>> type(a)
+<class 'numpy.ndarray'>
+>>> b=a.flatten() #默认按行的方向降维
+>>> b
+array([1, 2, 3, 4, 5, 6])
+>>> b.shape
+(6,)
+>>> type(b)
+<class 'numpy.ndarray'>
+
+>>> c=a.flatten('F') #按列降维
+>>> c
+array([1, 3, 5, 2, 4, 6])
+>>> d=a.flatten('A') #按行降维
+>>> d
+array([1, 2, 3, 4, 5, 6])
+
+2）矩阵：
+>>> a=mat([[1,2,3],[4,5,6]])
+>>> a.shape
+(2, 3)
+>>> type(a)
+<class 'numpy.matrixlib.defmatrix.matrix'>
+>>> b=a.flatten()
+>>> b
+matrix([[1, 2, 3, 4, 5, 6]])
+>>> b.shape
+(1, 6)
+
+3）数组
+flatten不能直接用于数据对象，需要先转换为array数据类型
+>>> a=[[1,2,3],[4,5,6]]
+>>> a
+[[1, 2, 3], [4, 5, 6]]
+>>> type(a)
+<class 'list'>
+>>> shape(a)
+(2, 3)
+>>> b=a.flatten()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'flatten'
+>>> b=array(a)
+>>> b
+array([[1, 2, 3],
+       [4, 5, 6]])
+>>> b.shape
+(2, 3)
+>>> type(b)
+<class 'numpy.ndarray'>
+>>> b.flatten()
+array([1, 2, 3, 4, 5, 6])
+
+
+
+
+
