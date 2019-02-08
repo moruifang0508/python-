@@ -1,0 +1,2 @@
+语法：os.symlink(src, dst)  
+说明：创建软链接， src -- 源地址  dst -- 目标地址
