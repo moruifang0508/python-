@@ -1,0 +1,46 @@
+语法：numpy.random.seed(num)
+说明：如果num为任意整数且每次都相同，则每次生成的随机数都相同
+    如果num为空或者为任意整数且每次都不同，则会随机生成。
+    
+实例：
+1. num为空或任意整数，但每次都不一样：值随机生成 每次都不一样
+
+import numpy as np
+for i in range(5):
+  np.random.seed()
+  perm = np.random.permutation(10)
+  print(perm)
+  
+ 返回：
+[9 2 1 7 6 8 4 0 5 3]
+[6 1 2 9 3 8 7 0 4 5]
+[3 1 8 2 7 0 4 5 6 9]
+[5 3 7 0 6 2 1 4 9 8]
+[2 3 5 7 1 8 4 0 9 6]
+
+
+for i in range(5):
+  np.random.seed(i)
+  perm = np.random.permutation(10)
+  print(perm)
+  
+  返回：
+[2 8 4 9 1 6 7 3 0 5]
+[2 9 6 4 0 3 1 7 8 5]
+[4 1 5 0 7 2 3 6 9 8]
+[5 4 1 2 9 6 7 0 3 8]
+[3 8 4 9 2 6 0 1 5 7]
+
+2. num为任意整数且为定值：
+for i in range(5):
+  np.random.seed(3)
+  perm = np.random.permutation(10)
+  print(perm)
+  
+  返回：
+[8 2 5 6 3 1 0 7 4 9]
+[8 2 5 6 3 1 0 7 4 9]
+[8 2 5 6 3 1 0 7 4 9]
+[8 2 5 6 3 1 0 7 4 9]
+[8 2 5 6 3 1 0 7 4 9]
+
