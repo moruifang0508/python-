@@ -1,0 +1,23 @@
+方法1：
+
+！[图片标签]（图片路径）
+其中图片路径可以为：1）本地图片，可以为绝对路径或相对路径; 2）网络图片，图片路径为网络地址
+前面有“！”符号，无论windows下还是linux下图片路径都是右斜杠“/”
+此方法为markdown格式，如果图片不存在，则显示图片标签
+
+方法2：
+from IPython.display import Image
+Image(filename="图片绝对路径或相对路径",width=400,height=400)
+
+方法3：
+%%html
+<img scr="图片绝对路径或相对路径"，width=200,height=200>
+此方法为markdown模式，图片可以居中
+
+方法4：
+%%html
+<img src="图片绝对路径或相对路径“，width=60，heigth=600>
+以上为code模式，图片不居中
+
+以上几种方法中，如果不设置width和depth的值，则为图片原始大小，也可以使用如下方法调整图片百分比：
+<img src="图片绝对路径或相对路径“，width=”40%“>
